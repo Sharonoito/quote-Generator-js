@@ -1,21 +1,39 @@
-const myQuotes = () =>{
-    const quotes = [
-        "Spread love everywhere you go. Let no one ever come to you without leaving happier",
-        "When you reach the end of your rope, tie a knot in it and hang on",
-        "Always remember that you are absolutely unique. Just like everyone else",
-        "Don't judge each day by the harvest you reap but by the seeds that you plant",
-        "The future belongs to those who believe in the beauty of their dreams",
-        "Tell me and I forget. Teach me and I remember. Involve me and I learn",
-        "The best and most beautiful things in the world cannot be seen or even touched — they must be felt with the heart",
-        "It is during our darkest moments that we must focus to see the light",
-        "Whoever is happy will make others happy too",
-        "Do not go where the path may lead, go instead where there is no path and leave a trail"
-    ]
+const successQuotes = [
+  "Success is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill",
+  "I have not failed. I've just found 10,000 ways that won't work. - Thomas Edison",
+  "Success is not how high you have climbed, but how you make a positive difference to the world. - Roy T. Bennett"
+];
+
+const lifeQuotes = [
+  "Life is what happens when you're busy making other plans. - John Lennon",
+  "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+  "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
+];
+
+const form = document.getElementById("quote-form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const category = document.querySelector('input[name="category"]:checked').value;
+  const count = document.getElementById("quote-count").value;
+
+  let quotes;
+  if (category === "success") {
+    quotes = successQuotes;
+  } else {
+    quotes = lifeQuotes;
+  }
+
+  let quoteDisplay = "";
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteDisplay += "<p>" + quotes[randomIndex] + "</p>";
+  }
+
+  document.getElementById("quote-display").innerHTML = quoteDisplay;
+});
 
 
-    randomQuotes = Math.floor(Math.random () * (quotes.length)); 
-        console.log(quotes[randomQuotes])
 
-}
 
-myQuotes()
+

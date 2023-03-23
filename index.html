@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Random Quote Generator</title>
+   <link rel="stylesheet" href="css/main.css">
+ </head>
+ <body class="bg-background">
+  <h1 class="pt-8 pb-12 ml-40 text-white text-lg font-semibold">Random Quote Generator</h1>
+  <div class="flex font-sans mt-8 bg-custom mr-40 ml-40 mt-40 shadow-2xl h-96">
+   <form id="quote-form" class="flex-auto w-1/2 ml-20">
+    <legend class="pt-8 font-medium dark:text-white">Select the quote type you want</legend>
+
+     <label for="category-success">Success Quote</label>
+     <input type="radio" name="category" id="category-success" value="success" checked>
+
+     <label for="category-life">Life Quote</label>
+     <input type="radio" name="category" id="category-life" value="life">
+
+     <div class="flex items-baseline mt-20 pb-6 border-b border-slate-200">
+      <div class="space-x-2 flex text-sm">
+      </div>
+    </div>
+
+    <div class="">
+      <div class="pt-6">
+        <label for="quote-count" class="pt-8 font-medium dark:text-white">Select the Number of Quotes you want</label>
+        <input type="number" name="quote-count" id="quote-count" value="1" min="1" max="10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-3" min="1" max="5" placeholder="Select No Of Quotes" required>
+      </div>
+     <button type="submit" class="h-10 px-6 font-semibold rounded-md bg-white text-black mt-8" >New Quote</button>
+
+    </div>
+   </form>
+   <div id = "displayQuote" class="flex-none relative w-1/2 bg-white">
+    <p id="quote-display" class="pt-8 ml-10"></p>
+  </div>
+  </div>
+  <script src="quotes.js"></script>
+ </body>
+ </html>
+ 
